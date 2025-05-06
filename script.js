@@ -48,7 +48,7 @@ let createCard = (object) => {
 
   const { name, role, email, img } = object;
 
-  return `<div class="card" style="width: 18rem;">
+  return `<div class="card col-12 mx-5 my-3" style="width: 18rem;">
             <img class="card-img-top" src="${img}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
@@ -64,20 +64,26 @@ let createCard = (object) => {
 
 let renderCard = (array, HTMLelem) => {
 
-  HTMLelem = '';
+  let totalCards = '';
   
   for (let element of array) {
 
-    let currElement = element
     // console.log(createCard(currElement))
-    HTMLelem += createCard(currElement)
+    totalCards += createCard(element)
+    
 
   }
 
-  return HTMLelem.innerHTML = HTMLelem
+  return HTMLelem.innerHTML = totalCards;
 }
 
 
+// Esecuzione Logica
+
+
+let impiegati = document.getElementById(`cardDivision`)
+
+renderCard(teamMembers, impiegati)
 
 
 
@@ -85,7 +91,9 @@ let renderCard = (array, HTMLelem) => {
 
 
 
-let marioBianchi = {
+
+
+/* let marioBianchi = {
   name: "Marco Bianchi",
   role: "Designer",
   email: "marcobianchi@team.com",
@@ -105,5 +113,5 @@ console.log(marioRossi)
 
 cartaMarioRossi = createCard(marioRossi);
 
-impiegati.innerHTML = cartaMarioRossi 
+impiegati.innerHTML = cartaMarioRossi */
 
