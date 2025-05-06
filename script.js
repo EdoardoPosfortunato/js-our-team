@@ -38,7 +38,7 @@ const teamMembers = [
 ];
 
 
-//////////   FUNZIONI    ////////
+///////////////   SEZIONE FUNZIONI    /////////////////////
 
 
 // Funzione che dato un oggetto restituisce tutte le sue chiavi e i suoi vaolori prointi per essere inseriti in HTML 
@@ -78,40 +78,78 @@ let renderCard = (array, HTMLelem) => {
 }
 
 
-// Esecuzione Logica
+// funzione per aggiungere impiegato
+
+/* const aggiungiImpiegato = (array, e) => {
+
+  e.preventDefault();
+
+  const name = document.getElementById('name').value
+  const role = document.getElementById('role').value
+  const email = document.getElementById('email').value
+  const img = document.getElementById('img').value
+  
+  const tempImpNuovo = {
+
+    name,
+    role,
+    email,
+    img
+
+  }
+
+  array.push(tempImpNuovo)
+  console.log(array)
 
 
-let impiegati = document.getElementById(`cardDivision`)
-
-renderCard(teamMembers, impiegati)
-
+  
+}; */
 
 
+/////////////////   FINE SEZIONE FUNZIONI   ///////////////
 
 
+// Esecuzione Logica esercizio base
 
 
+// Estrazione elementi DOM
+const impiegati = document.getElementById(`cardDivision`)
+ 
+
+renderCard(teamMembers, impiegati); /// funzione che stampa in pagina le card esistenti
 
 
-/* let marioBianchi = {
-  name: "Marco Bianchi",
-  role: "Designer",
-  email: "marcobianchi@team.com",
-  img: "img/male1.png"
+const nuovoImpegatoForm = document.getElementById('nuovoImpegatoForm') 
+
+
+nuovoImpegatoForm.addEventListener("submit", aggiungiImpiegato)
+
+function aggiungiImpiegato(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById('name').value
+  const role = document.getElementById('role').value
+  const email = document.getElementById('email').value
+  const img = document.getElementById('img').value
+  
+  const tempImpNuovo = {
+
+    name,
+    role,
+    email,
+    img
+
+  }
+
+  teamMembers.push(tempImpNuovo)
+  // console.log(teamMembers)
+
+  renderCard(teamMembers, impiegati);
+
 }
 
 
 
-let impiegati = document.getElementById(`cardDivision`)
 
-const print = renderCard(teamMembers, impiegati)
-console.log(print)
-
-const marioRossi = teamMembers[0]
-
-console.log(marioRossi)
-
-cartaMarioRossi = createCard(marioRossi);
-
-impiegati.innerHTML = cartaMarioRossi */
 
