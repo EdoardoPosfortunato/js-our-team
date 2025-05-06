@@ -146,6 +146,8 @@ function aggiungiImpiegato(e) {
   // console.log(teamMembers)
 
   renderCard(teamMembers, impiegati);
+  
+  nuovoImpegatoForm.reset()
 
 }
 
